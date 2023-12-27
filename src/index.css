@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.aiz {
+    --tw-bg-opacity: 1;
+    background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+    position:relative;
+    overflow:hidden;
+}
+
+.bfg {
+    -webkit-mask-image: radial-gradient(closest-side,white,transparent);
+    mask-image: radial-gradient(closest-side,white,transparent);
+}
+
+.glass-dark{
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+}
