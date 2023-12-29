@@ -1,8 +1,8 @@
 [
   {
-    "type": "group",
     "name": "header",
     "label": "Cabecera",
+    "type": "group",
     "expanded": true,
     "children": [
       {
@@ -37,7 +37,7 @@
     "min" : 1,
     "max" : null,
     "sorting_label_field" : "cardPlans.plan",
-    "default" : null
+    "default" : 1
   },
   "children" : [ {
     "id" : "cardPlans.plan",
@@ -72,6 +72,27 @@
     "type" : "richtext",
     "default" : "10 peticiones al mes"
   },
+{
+  "id" : "cardPlans.link_field",
+  "name" : "link_field",
+  "display_width" : null,
+  "label" : "Link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+  "show_advanced_rel_options" : true,
+  "type" : "link",
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}
+  ,
   {
     "id" : "itemList",
     "type": "group",
@@ -84,7 +105,7 @@
       "min": 1,
       "max": null,
       "sorting_label_field" : "itemList.item",
-      "default" : null
+      "default" : 1
     },
     "children":[
       {
@@ -105,12 +126,11 @@
     ]
   }
 ],
-  "type" : "group",
+  "type": "group",
   "default" : [ {
     "plan" : "Free",
     "price" : 0,
     "subtitle" : "10 peticiones al mes"
-    
   } ]
 }
   ]

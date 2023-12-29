@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 
-const CardPrice = ({plan = 'Free', subtitle = "10 peticiones al mes", price = "Gratis", itemList }) => {
+const CardPrice = ({plan = 'Free', subtitle = "10 peticiones al mes", price = "Gratis", itemList, link_field }) => {
+
+    const enlace = link_field ? link_field.url.href : ""
 
     const isFree = price <= 0 || price === "Gratis" ? "Gratis" : price
 
@@ -32,13 +34,18 @@ const CardPrice = ({plan = 'Free', subtitle = "10 peticiones al mes", price = "G
             <p className='text-5xl '>{moneda}{isFree}{mes}</p>
         </div>
         <div className=''>
-            <a className="block text-center border-slate-50 border-2 px-4 py-2 mb-6  after:content-['_↗']  hover:bg-slate-50 hover:text-slate-900" href='http://asmalljob.com/'>Solicitar</a>
+            <a className="block text-center border-slate-50 border-2 px-4 py-2 mb-6  after:content-['_↗']  hover:bg-slate-50 hover:text-slate-900 focus:bg-slate-50 visited:bg-slate-50 focus:text-slate-900" href={enlace}>Solicitar</a>
             <ul role="list" className="text-sm divide-y">
-                {itemList}
-                <li className='py-2 flex gap-2 '>{checkSvg}List item</li>
-                <li className='py-2 flex gap-2 '>{checkSvg}List item</li>
-                <li className='py-2 flex gap-2 '>{checkSvg}List item</li>
-                <li className='py-2 flex gap-2 '>{checkSvg}List item</li>
+
+              { itemList ? itemList.map( (list, index) => {
+                     return(
+                            <li 
+                            key={`${plan}${index}`}
+                            className='py-2 flex gap-2 '>{checkSvg} {list.item}</li>
+                            )
+
+                }) : ""
+             } 
 
             </ul>
         </div>
