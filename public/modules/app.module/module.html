@@ -7,7 +7,10 @@
 <div class="cms-react-boilerplate">
   <script type="application/json"
     data-module-instance="{{ instance_id }}"
-    data-portal-id="{{ portal_id }}">
+    data-portal-id="{{ portal_id }}"
+    data-plan-head="{{ module.header }}"
+    data-grupo="{{ module.cardPlans }}"
+    >
       {{ module|tojson }}
   </script>
 

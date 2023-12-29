@@ -1,14 +1,117 @@
 [
-    {
-      "default": 0,
-      "min": 0,
-      "max": 100,
-      "display": "slider",
-      "label": "Starting number of reasons",
-      "locked": false,
-      "name": "initial_count",
-      "required": false,
-      "type": "number"
-    }
+  {
+    "type": "group",
+    "name": "header",
+    "label": "Cabecera",
+    "expanded": true,
+    "children": [
+      {
+        "name": "intro",
+        "label": "Pre title",
+        "required": false,
+        "type": "text",
+        "default": "─ Elige un plan."
+      },
+      {
+        "name": "title",
+        "label": "Main Headline",
+        "required": false,
+        "type": "richtext",
+        "default": "This is your main headline."
+      },
+      {
+        "name": "description",
+        "label": "Sub Title",
+        "type": "text",
+        "default": "Select a plan to scale your business─Grow"
+      }
+    ]
+  },  
+{
+  "id" : "cardPlans",
+  "name" : "cardPlans",
+  "label" : "Planes",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : "cardPlans.plan",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "cardPlans.plan",
+    "name" : "plan",
+    "label" : "Nombre del Plan",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Free"
+  }, {
+    "id" : "cardPlans.price",
+    "name" : "price",
+    "label" : "Precio",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "step" : 1,
+    "type" : "number",
+    "default" : 0
+  }, {
+    "id" : "cardPlans.subtitle",
+    "name" : "subtitle",
+    "label" : "subtitle",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "richtext",
+    "default" : "10 peticiones al mes"
+  },
+  {
+    "id" : "itemList",
+    "type": "group",
+    "name": "itemList",
+    "label": "Lista de ventajas",
+    "required" : false,
+    "locked" : false,
+    "expanded": false,
+    "occurrence":{
+      "min": 1,
+      "max": null,
+      "sorting_label_field" : "itemList.item",
+      "default" : null
+    },
+    "children":[
+      {
+        "id": "itemList.item",
+        "name": "item",
+        "label": "Ventaja",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "type": "text",
+        "default": "List item"
+      }
+    ],
+    "default": [
+      {
+        "item": "List item"
+      }
+    ]
+  }
+],
+  "type" : "group",
+  "default" : [ {
+    "plan" : "Free",
+    "price" : 0,
+    "subtitle" : "10 peticiones al mes"
+    
+  } ]
+}
   ]
   

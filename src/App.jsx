@@ -1,4 +1,5 @@
 import Price from "./components/Price";
+import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 
 function App({ moduleData }) {
@@ -11,7 +12,8 @@ function App({ moduleData }) {
 return (
   <>
   <Navbar/>
-  <Price/>
+  <Price moduleData={moduleData}/>
+  <Footer/>
   </>
   )
 }

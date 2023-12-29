@@ -2,11 +2,16 @@ import React from 'react'
 import CardPrice from './CardPrice'
 import IntroPrice from './IntroPrice'
 
-const Price = () => {
+const Price = ({moduleData}) => {
+
+
+const { cardPlans, header } = moduleData;
+
+
 
   const planes = [
     { },
-    { plan: "Basico", subtitle: "For individuals or team just getting started with sales.", price: 28},
+    { plan: `Basico`, subtitle: "For individuals or team just getting started with sales.", price: 28},
     { plan: "Professional", subtitle: "For teams that need to create sales plans with confidence.", price: 60},
     { plan: "Enterprise", subtitle: "For teams that need additional security, control, and support.", price:80}
   ]
@@ -28,16 +33,17 @@ const Price = () => {
     <section className='py-16 px-4 aiz' >
       {svgBall}
       <div className='container mx-auto'>
-        <IntroPrice/>
+        <IntroPrice header={header}/>
         <div  className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
 
-          { planes.map( planes => {
-              const { plan, subtitle, price } = planes;
+          { cardPlans.map( planes => {
+              const { plan, subtitle, price, itemList } = planes;
               return(
                 <CardPrice key={plan}
                   plan={plan}
                   subtitle={subtitle}
                   price={price}
+                  itemList={itemList}
                 />
               )
 
